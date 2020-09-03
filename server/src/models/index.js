@@ -18,9 +18,14 @@ fs
     )
     .forEach((file)=>{
         const model=require(path.join(__dirname,file))(sequelize,Sequelize.DataTypes)
-        console.log(model)
         db[model.name]=model
     })
+
+Object.keys(db).forEach(function (modelName) {
+    if ('associate' in db[modelName]) {
+        db[modelName].associate(db)
+    }
+})
 
 db.sequelize=sequelize
 db.Sequelize=Sequelize
