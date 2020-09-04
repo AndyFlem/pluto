@@ -1,8 +1,8 @@
 <template>
   <v-layout>
     <div v-for="site in sites"
-      :key="site.ref">
-      {{site.ref}}
+      :key="site.SiteRef">
+      {{site.SiteRef}}
     </div>
   </v-layout>
 </template>
@@ -14,7 +14,7 @@ export default {
 
   data () {
     return {
-      songs: null
+      sites: null
     }
   },
   async mounted () {

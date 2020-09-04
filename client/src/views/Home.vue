@@ -1,28 +1,25 @@
 <template>
-  <div>
-    <hero />
-    <hr />
-    <home-content />
+  <div class="text-center">
+    <h1 class="mb-4">LHMP</h1>
+    <grave :grave=""/>
   </div>
 </template>
 
 <script>
-import Hero from "../components/Hero";
-import HomeContent from "../components/HomeContent";
+import Grave from '../components/Sites/Grave'
 
 export default {
-  name: "home",
-  components: {
-    Hero,
-    HomeContent
+  name: "Home",
+  async mounted() {
+
+  },
+  components:{
+    Grave
   }
 };
 </script>
 
+
 <style lang="scss" scoped>
-.next-steps {
-  .fa-link {
-    margin-right: 5px;
-  }
-}
+
 </style>
