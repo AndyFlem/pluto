@@ -12,7 +12,7 @@ app.use(cors())
 
 require('./routes')(app)
 
-sequelize.sync({ alter: true })
+sequelize.sync()
     .then(()=> {
         app.listen(config.port)
         console.log(`Pluto server started on ${config.port}`)

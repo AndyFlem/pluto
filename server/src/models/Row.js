@@ -1,12 +1,13 @@
 module.exports=(sequelize,DataTypes)=>{
-    const Row=sequelize.define('Row',{
-        RowRef:{type:DataTypes.STRING,unique:true},
-        RowNo:{type:DataTypes.INTEGER},
-        Sites:{type:DataTypes.INTEGER},
-        Geometry:{type:DataTypes.GEOMETRY('POLYGON', 32735)},
+    const Row=sequelize.define('row',{
+        row_id:{type: DataTypes.INTEGER,primaryKey: true},
+        row_ref:{type:DataTypes.STRING,unique:true},
+        row_no:{type:DataTypes.INTEGER},
+        geometry:{type:DataTypes.GEOMETRY('POLYGON', 32735)},
     })
     Row.associate = function (models) {
-        Row.belongsTo(models.Block)
+        Row.belongsTo(models.block,{foreignKey: 'block_id'})
+        Row.hasMany(models.site,{foreignKey: 'row_id'})
     }    
     return Row
 }

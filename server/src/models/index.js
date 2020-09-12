@@ -5,10 +5,17 @@ const config=require('../config/config')
 const db={}
 
 const sequelize=new Sequelize(
-    config.db.database,
-    config.db.user,
-    config.db.password,
-    {dialect: 'postgres'}
+  config.db.database,
+  config.db.user,
+  config.db.password,
+  {
+    dialect: 'postgres',
+    define:{ 
+      underscored:true,
+      underscoredAll:true,
+      freezeTableName:true
+    }
+  }
 )
 
 fs

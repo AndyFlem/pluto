@@ -1,11 +1,9 @@
 <template>
-  <div id="app" class="d-flex flex-column h-100">
+  <div id="app" class="container-fluid h-100">
     <nav-bar />
-    <div class="container flex-grow-1">
+    <div class="container-fluid">
       <error />
-      <div class="mt-5">
-        <router-view />
-      </div>
+      <router-view />
     </div>
     <footer class="bg-light text-center p-3">
       &copy; 2020
